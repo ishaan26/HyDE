@@ -1,5 +1,5 @@
     "custom/wbar": {
-        "format": "{}", //    //
+        "format": " {}", //    //
         "rotate": ${r_deg},
         "exec": "echo ; echo  switch bar //  dock",
         "on-click": "wbarconfgen.sh n",

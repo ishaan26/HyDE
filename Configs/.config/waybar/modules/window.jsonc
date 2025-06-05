@@ -1,11 +1,12 @@
     "hyprland/window": {
-        "format": "  {}",
+        "format": "  | {}",
         "rotate": ${r_deg},
         "separate-outputs": true,
         "rewrite": {
             "${USER}@${set_sysname}:(.*)": "$1 ",
-            "(.*) — Mozilla Firefox": "$1 󰈹",
-            "(.*)Mozilla Firefox": "Firefox 󰈹",
+            "(.*) — Mozilla Firefox": "󰈹 $1",
+            "(.*)Mozilla Firefox": "󰈹 Firefox",
+            "(.*)nvim": " $1",
             "(.*) - Visual Studio Code": "$1 󰨞",
             "(.*)Visual Studio Code": "Code 󰨞",
             "(.*) - Code - OSS": "$1 󰨞",

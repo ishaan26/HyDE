@@ -1,5 +1,5 @@
     "custom/cliphist": {
-        "format": "{}",
+        "format": " {}",
         "rotate": ${r_deg},
         "exec": "echo ; echo 󰅇 clipboard history",
         "on-click": "sleep 0.1 && cliphist.sh -c",
