@@ -922,7 +922,7 @@ def main():
         if os.path.exists(lock_file):
             logger.debug("Waybar hide lock file exists, not starting waybar")
             return
-            
+
         update_icon_size()
         update_border_radius()
         generate_includes()
@@ -1022,7 +1022,6 @@ def update_global_css():
 
 
 def get_waybar_value_from_sources(value_name, default_value, sources):
-
     def _try_parse_value(raw_value, source_name):
         if type(default_value) is str:
             return _try_parse_str_value(raw_value, source_name)
@@ -1070,7 +1069,9 @@ def get_waybar_font_family():
         (lambda: get_state_value("BAR_FONT"), "state file"),
     ]
 
-    return get_waybar_value_from_sources("font family", "JetBrainsMono Nerd Font", font_family_sources)
+    return get_waybar_value_from_sources(
+        "font family", "JetBrainsMono Nerd Font", font_family_sources
+    )
 
 
 def get_waybar_font_size():
@@ -1403,7 +1404,9 @@ def watch_waybar():
                 time.sleep(2)
                 continue
 
-            result = subprocess.run(["ps", "-C", "waybar,.waybar-wrapped"], capture_output=True)
+            result = subprocess.run(
+                ["ps", "-C", "waybar,.waybar-wrapped"], capture_output=True
+            )
             if result.returncode != 0:
                 run_waybar_command("killall waybar; waybar & disown")
                 logger.debug("Waybar restarted")
